@@ -1,0 +1,841 @@
+/* Importar una fuente de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Configuración de "reset" general */
+* {
+    margin: 0;
+    padding: 0;
+    /* Ambos eliminan todos los espacios exteriores (márgenes) e interiores (rellenos) que los navegadores añaden por defecto a los elementos HTML */
+    box-sizing: border-box;
+    /* hace que se extienda hacia adentro, manteniendo el ancho asignado y reduciendo el espacio de contenido disponible*/
+}
+
+/* Características generales en el HTML */
+html {
+    scroll-behavior: smooth;
+    /* Aplica un desplazamiento suave a toda la página web */
+    overflow-x: hidden;
+    /* Oculta cualquier contenido que se desborde horizontalmente (de izquierda a derecha) fuera de la ventana o contenedor principal */
+    position: relative;
+    /* Sirve para que su posicionamiento se calcule en relación a sí mismo, permitiendo luego moverlo (y a sus elementos hijos) con top, right, bottom, left sin afectar el flujo de otros elementos. */
+}
+
+/* Variables para los colores */
+:root {
+
+    --color-bg1: lightcyan;
+    --color-bg2: lightblue;
+    --color-dark: #202020;
+    --color-header: #dffdff;
+    --color-box: #fdfdfd;
+    --color-box1: #555;
+    --color-box2: #333;
+    --color-profblue: #2c3e50;
+    --color-accent: #e74c3c;
+    --color-bbb: #bbb;
+    --color-ccc: #ccc;
+    --color-ddd: #ddd;
+    --color-eee: #eee;
+    --color-fff: #fff;
+}
+
+.gradient {
+    min-height: 100svh;
+    /* min-height: Define la altura mínima de un elemento. Si el contenido requiere más espacio, el elemento crecerá, pero nunca será más pequeño que este valor. */
+    /* 100svh ("s" de "small" y "vh" de "viewport height"): Significa el 100% de la altura de la ventana gráfica más pequeña, que se ajusta dinámicamente cuando las barras de herramientas (como las de navegadores móviles) aparecen o desaparecen, a diferencia de 100vh que usa la altura máxima del viewport.  */
+    background: linear-gradient(to right, var(--color-bg1) 0%, var(--color-bg2) 100%);
+    /* Aplica un fondo degradado lineal, creando una transición suave de color de izquierda a derecha. */
+    position: relative;
+}
+
+/* Características del cuerpo del documento */
+body {
+    font-family: "Roboto", Helvetica, sans-serif;
+    /* Tipo de letra de todo el documento */
+    color: var(--color-header);
+    /* Color de la letra de todo el documento */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 1rem;
+    /* Establece un espacio o "margen" de una unidad "rem" en la parte inferior de un elemento, separándolo visualmente de lo que esté debajo para los encabezados*/
+}
+
+/* Configuración general del "header" */
+header {
+    text-align: center;
+    /* Centra todo el contenido horizontalmente */
+    padding: 30px 20px;
+    /* Espacio interno arriba/abajo y lados */
+    background-color: var(--color-profblue);
+    /* Color de fondo suave */
+    border-bottom: 3px solid var(--color-accent);
+    /* Línea decorativa acentuada de separación inferior */
+}
+
+/* Espaciado para el bloque del título */
+header .encabezado {
+    /* Selecciona el primer elemento <div> "encabezado" que es hijo directo del elemento <header> */
+    margin-bottom: 20px;
+    /* Separa el bloque del título de la barra de navegación */
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    /* Quita margen superior y deja un poco abajo */
+    color: var(--color-header);
+}
+
+/* Estilo "Botón" para el enlace de GitHub/LinkedIn */
+header .encabezado .linkProf a {
+    display: inline-block;
+    /* Necesario para aplicar padding y transformaciones */
+    text-decoration: none;
+    /* Quita el subrayado */
+    background-color: var(--color-accent);
+    /* Color inicial */
+    color: var(--color-box);
+    /* Texto clarito */
+    padding: 10px 25px;
+    /* Relleno para que parezca botón */
+    border-radius: 50px;
+    /* Bordes redondeados */
+    margin-top: 5px;
+    /* Establece un espacio de 5 píxeles por encima del elemento */
+    font-weight: bold;
+    /* Hace que el texto seleccionado se muestre en negrita o con un grosor de fuente mayor que el texto normal */
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    /* Transición lenta (0.5 segundos) */
+}
+
+/* Efecto "hover", al pasar el ratón (sobre el botón) */
+header .encabezado .linkProf a:hover {
+    background-color: var(--color-dark);
+    /* Cambio a color final */
+    transform: translateY(-2px);
+    /* Pequeño efecto de elevación */
+}
+
+/* Barra de navegación horizontal y limpia */
+nav ul {
+    list-style-type: none;
+    /* Quita las viñetas (puntos) */
+    display: flex;
+    /* Convierte la lista en horizontal */
+    justify-content: center;
+    /* Centra los elementos */
+    flex-wrap: wrap;
+    /* Permite que bajen si la pantalla es muy pequeña (adaptabilidad) */
+}
+
+nav li {
+    position: relative;
+    /* Necesario para posicionar el separador */
+}
+
+/* El separador "|" entre enlaces */
+/* Se usa "::after" para crear el símbolo después de cada <li>, excepto el último */
+nav li:not(:last-child)::after {
+    content: "|";
+    margin: 0 15px;
+    /* Espacio a los lados del símbolo */
+    color: var(--color-bbb);
+    /* Color gris suave para el separador */
+}
+
+/* Estilos y transición de los enlaces del menú */
+nav a {
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: var(--color-header);
+    /* Color de texto contraste */
+    font-size: 1.1em;
+    font-weight: 600;
+    /* Definen el tamaño "size" y el grosor "weight" de la fuente de un elemento */
+    transition: color 0.8s ease;
+    /* Transición lenta de color */
+}
+
+/* Efecto "hover" del menú */
+nav a:hover {
+    color: var(--color-accent);
+    /* Cambia al color acentuado */
+}
+
+/* Estilo para el texto pequeño académico */
+header .infoProf small {
+    display: block;
+    /* Convierte un elemento HTML en un "bloque", haciendo que ocupe todo el ancho disponible de su contenedor */
+    margin-top: 5px;
+    color: var(--color-bbb);
+    line-height: 1.6;
+}
+
+/* Configuración de cada sección en su caja respectiva */
+.sobreMi,
+.formacion,
+.proyectos,
+.contacto {
+    max-width: 1000px;
+    /* Ancho máximo para que no se estire demasiado en pantallas grandes */
+    margin: 0 auto;
+    /* Centrado del bloque en la página */
+    padding: 40px 20px;
+    /* Espaciado interno */
+    color: var(--color-box2);
+    line-height: 1.6;
+    /* Altura de línea para facilitar la lectura */
+    overflow: hidden;
+    /* Limpia los flotados internos si fuera necesario */
+}
+
+/* Títulos con sombra suave */
+h2,
+h3 {
+    color: var(--color-profblue);
+    /* Color azul oscuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    /* Sombra suave para los subtitulos */
+    margin-bottom: 20px;
+}
+
+/* La etiqueta "figure" (este contenedor manda sobre la posición) */
+.sobreMi section figure {
+    float: right;
+    /* La caja entera "figure" se va a la derecha */
+    width: 200px;
+    /* Controlamos el ancho total aquí */
+    margin: 0;
+    /* ¡IMPORTANTE! figure trae márgenes por defecto, hay que quitarlos */
+    margin-left: 25px;
+    /* Separación con el texto de la izquierda */
+    margin-bottom: 20px;
+    /* Separación por debajo */
+    text-align: center;
+    /* Centra la imagen y el texto dentro de la caja */
+}
+
+/* La estética de la imagen */
+.sobreMi section figure img {
+    width: 100%;
+    /* Se adapta al ancho de la caja (200px) */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    /* La sombra va en la imagen */
+    display: block;
+    /* Evita un pequeño espacio blanco extraño bajo la imagen */
+}
+
+/* El "figcaption" (pie de la foto) */
+.sobreMi figure figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--color-box1);
+    margin-top: 8px;
+    /* Espacio entre la imagen y el nombre */
+}
+
+/* Párrafos */
+section p {
+    margin-bottom: 1.5em;
+    /* Separación clara entre párrafos */
+}
+
+/* Caja contenedora de "skills" (Habilidades) */
+.sobreMi .skills {
+    margin-top: 40px;
+    /* Separación entre el texto "Sobre mí" y la caja "skills" */
+    padding: 30px;
+    border: 1px solid var(--color-ddd);
+    /* Borde muy sutil */
+    border-radius: 15px;
+    /* Esquinas redondeadas */
+    background-color: var(--color-box);
+    /* Fondo casi blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+    /* Sombra general suave */
+    display: flex;
+    /* Flexbox para organizar el título y las cajas internas */
+    flex-wrap: wrap;
+    /* Permite que los elementos bajen de línea si no caben */
+    gap: 20px;
+    /* Espacio entre las cajas */
+    justify-content: space-between;
+    /* ¡INTERESANTE! Distribuye los elementos "hijos" de manera uniforme a lo largo del eje principal (por defecto, horizontal), colocando el primer elemento pegado al inicio del contenedor y el último pegado al final, con el espacio restante repartido equitativamente entre los elementos intermedios */
+}
+
+/* Para forzar al título "h3" a ocupar todo el ancho para que quede arriba */
+.sobreMi .skills h3 {
+    width: 100%;
+    border-bottom: 2px solid var(--color-eee);
+    padding-bottom: 10px;
+}
+
+/* Cajas de "hard" y "soft" skills */
+.hard,
+.soft {
+    flex: 1 1 40%;
+    /* Crecen y ocupan al menos el 40% del ancho (se ponen lado a lado) */
+    min-width: 300px;
+    /* Si la pantalla es pequeña, ocupan todo el ancho */
+    padding: 20px;
+    background-color: var(--color-fff);
+    border: 1px solid var(--color-ddd);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transición para el efecto botón */
+}
+
+/* Efecto "hover" al pasar el ratón sobre las cajas de skills */
+.hard:hover,
+.soft:hover {
+    transform: translateY(-5px);
+    /* Se eleva 5 pixeles hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    /* hace el efecto de que la sombra aumenta */
+    border-color: var(--color-bbb);
+}
+
+/* Para los títulos "h4" dentro de sus respectivas cajas */
+.hard h4,
+.soft h4 {
+    margin-top: 0;
+    color: var(--color-accent);
+    /* Color de acento (rojo suave) para diferenciar (acentuar) */
+    text-transform: uppercase;
+    /* Convierte todas las letras de un elemento de texto a mayúsculas, sin cambiar el contenido original en HTML, solo su presentación visual */
+    font-size: 0.95em;
+    letter-spacing: 1px;
+}
+
+/* Listas de Definición (dl, dt, dd) */
+dl {
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--color-box2);
+    margin-top: 15px;
+    font-size: 1.05em;
+}
+
+dd {
+    margin-left: 0;
+    /* Quita el margen izquierdo por defecto */
+    margin-bottom: 10px;
+    color: var(--color-box1);
+    font-size: 0.95em;
+    padding-left: 10px;
+    border-left: 3px solid var(--color-eee);
+    /* Línea decorativa a la izquierda de la descripción */
+}
+
+/* Separación general de la caja Formación */
+.formacion {
+    margin-top: 40px;
+    /* Separación de la sección anterior */
+}
+
+/* Estilo de las cajas "Académico" y "Especialización" */
+.academico,
+.especializacion {
+    background-color: var(--color-box);
+    /* Fondo suave */
+    border: 1px solid var(--color-eee);
+    /* Borde sutil */
+    border-radius: 15px;
+    /* Esquinas redondeadas */
+    padding: 30px;
+    /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+    /* Sombra leve */
+    margin-top: 50px;
+    /* Separación con el título "Formación" */
+    margin-bottom: 40px;
+    /* Separación entre ellas */
+}
+
+/* Subtítulos "h3" dentro de las cajas */
+.academico h3,
+.especializacion h3 {
+    border-bottom: 2px solid var(--color-eee);
+    /* Línea divisoria debajo del título */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    /* Para que ocupe todo el ancho */
+    color: var(--color-profblue);
+}
+
+/* Configuración interna de la caja "Especialización" */
+.especializacion {
+    display: flex;
+    /* Flexbox sirve para que las cajas internas ("ciber", "iaDatos", "gls") se acomoden bien */
+    flex-wrap: wrap;
+    /* Permite que los elementos bajen si no caben */
+    gap: 20px;
+    /* Espacio entre las tarjetas internas */
+}
+
+/* Estilo de las cajas "ciber", "iaDatos" y "gls" */
+.ciber,
+.iaDatos,
+.gls {
+    flex: 1 1 300px;
+    /* Crecen para ocupar espacio, mínimo 300px de ancho */
+    background-color: var(--color-fff);
+    /* Fondo blanco puro para resaltar sobre el gris suave */
+    border: 1px solid var(--color-ddd);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Sombra muy leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    /* Transición para el efecto botón/elevación */
+
+}
+
+/* Efecto "hover" al pasar el ratón sobre cada caja */
+.ciber:hover,
+.iaDatos:hover,
+.gls:hover {
+    transform: translateY(-5px);
+    /* Se eleva un poco */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    /* Efecto de aumentar la sombra */
+    border-color: var(--color-bbb);
+}
+
+/* Para los subtítulos "h4" en cada caja */
+.ciber h4,
+.iaDatos h4,
+.gls h4 {
+    color: var(--color-accent);
+    /* Color de acento rojo suave */
+    margin-top: 0;
+    font-size: 1.1em;
+    min-height: 2.5em;
+    /* Truco visual: altura mínima para alinear títulos de varias líneas */
+}
+
+/* Estilo para las Listas (ul y li), que se vean limpias */
+.formacion ul {
+    list-style-type: none;
+    /* Quita los puntos negros por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.formacion li {
+    position: relative;
+    padding-left: 15px;
+    /* Espacio para la línea decorativa a la izquierda */
+    margin-bottom: 20px;
+    /* Espacio entre cada item de la lista */
+    border-left: 3px solid var(--color-eee);
+    /* Línea vertical a la izquierda */
+    line-height: 1.6;
+    /* Altura de línea para buena lectura */
+    color: var(--color-box1);
+}
+
+/* Resaltar el texto en cada título de los cursos) */
+.formacion li strong {
+    color: var(--color-box2);
+    font-size: 1.05em;
+    display: block;
+    /* Hace que el título ocupe su propia línea aunque no haya <br> */
+    margin-bottom: 5px;
+}
+
+/* Separación de la sección Proyectos, respecto a la sección anterior */
+.proyectos {
+    margin-top: 10px;
+}
+
+/* Estilo para las cajas "ids", "segu" y "desa" de Proyectos */
+.ids,
+.segu,
+.desa {
+    background-color: var(--color-box);
+    /* Fondo suave */
+    border: 1px solid var(--color-eee);
+    /* Borde sutil */
+    border-radius: 15px;
+    /* Esquinas redondeadas */
+    padding: 25px;
+    /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    /* Sombra suave */
+
+    transition: box-shadow 0.3s ease;
+    /* Transición suave */
+}
+
+/* Efecto para que al pasar el ratón, la tarjeta resalte un poco más */
+.ids:hover,
+.segu:hover,
+.desa:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilizando la tabla */
+article table {
+    width: 100%;
+    /* La tabla ocupa todo el ancho disponible */
+    border-collapse: collapse;
+    /* Elimina espacios extraños entre celdas */
+    table-layout: fixed;
+    /* Ayuda a distribuir el espacio equitativamente */
+}
+
+/* Estilo para las celdas "td" */
+article td {
+    padding: 20px;
+    /* Espacio entre la imagen y el texto (figcaption) */
+    vertical-align: middle;
+    /* Centra la imagen respecto al texto */
+}
+
+/* Estilo de las imágenes dentro de la tabla */
+article td figure {
+    margin: 0;
+    /* Reseteamos márgenes por defecto */
+    text-align: center;
+    /* Alinea la imagen y su descripción (figcaption) al centro */
+    display: inline-block;
+    /* Comportamiento correcto dentro de la celda */
+    width: 100%;
+    /* Asegura que el contenedor figure ocupe el ancho */
+}
+
+article td img {
+    max-width: 100%;
+    /* Hace la imagen "responsive" (para que no se salga de la caja) */
+    height: auto;
+    /* Mantiene la proporción */
+    border-radius: 8px;
+    /* Bordes redondeados en las imágenes */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra muy suave alrededor de la imagen */
+}
+
+article figcaption {
+    margin-top: 10px;
+    /* Separación entre foto y texto */
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--color-box1);
+    text-align: center;
+    /* Asegura que el texto del pie de foto esté centrado */
+}
+
+/* Estilo para el título de los Proyectos "h4" */
+article h4 {
+    color: var(--color-profblue);
+    margin-top: 0;
+    /* Quita margen superior para que se alinee bien con la foto */
+    font-size: 1.2em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+article p {
+    color: var(--color-box1);
+    margin-bottom: 15px;
+}
+
+/* Estilo para los enlaces de los Proyectos */
+article a {
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: var(--color-accent);
+    /* Color rojo suave */
+    font-weight: bold;
+    border-bottom: 1px dotted var(--color-accent);
+    /* Puntitos en lugar de línea */
+    transition: color 0.3s ease;
+    /* Transición un poco lenta */
+}
+
+/* Al pasar el ratón sobre los enlaces */
+article a:hover {
+    color: var(--color-profblue);
+    /* Azul oscuro al pasar el ratón */
+    border-bottom-style: solid;
+    /* Pasa a línea sólida al pasar el ratón */
+}
+
+/* Los separadores "hr" */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    /* Efecto de línea muy sutil que se desvanece en los extremos */
+    margin: 40px 0;
+    /* Separación vertical amplia */
+}
+
+/* "Responsive Design" para los móviles ¡importante!... si se usan tablas */
+/* "Media Queries" @media (), Con ese código, es como si le dijeramos al navegador: */
+/* "Si la pantalla es pequeña, olvida que esto es una tabla y ponme la imagen encima del texto". */
+@media (max-width: 768px) {
+
+    article table,
+    article tbody,
+    article tr,
+    article td {
+        display: block;
+        /* Convierte las celdas en bloques uno debajo de otro */
+        width: 100%;
+    }
+
+    article td {
+        padding: 10px 0;
+        /* Ajusta el padding para móviles */
+        text-align: center;
+        /* Centra todo en el móvil */
+    }
+
+    article img {
+        width: 80%;
+        /* Hace que la imagen sea un poco más pequeña en móvil */
+    }
+}
+
+/* Separación y estilo para Contacto */
+.contacto {
+    position: relative;
+    margin-top: 80px;
+    /* Separador con respecto al anterior */
+    background-color: var(--color-box);
+    border: 1px solid var(--color-eee);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+    /* Sombra leve */
+    flex-wrap: wrap;
+    /* Permite que los elementos bajen de línea si no caben */
+    margin-bottom: 60px;
+    /* Último margen para que no se pegue con el <footer> */
+}
+
+/* Estilo para el titulo Contacto "h2" */
+.contacto h2 {
+    color: var(--color-profblue);
+    border-bottom: 2px solid var(--color-eee);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Para el estilo del formulario */
+.contacto form {
+    max-width: 600px;
+    /* Limita el ancho para que no se vea excesivamente grande */
+    margin: 0 auto;
+    /* Centra el formulario en la pantalla */
+}
+
+/* Estilo para las etiquetas (label) */
+.contacto label {
+    display: block;
+    /* Pone la etiqueta en su propia línea */
+    margin-bottom: 8px;
+    /* Espacio entre la etiqueta y el campo */
+    font-weight: bold;
+    color: var(--color-profblue);
+}
+
+/* Estilo para que los textos "inputs" y "textarea" mantengan la armonía con el resto del documento */
+.contacto input[type="text"],
+.contacto input[type="email"],
+.contacto input[type="tel"],
+.contacto textarea {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    padding: 12px;
+    /* Espacio interno */
+    margin-bottom: 20px;
+    /* Separación con el siguiente campo */
+    border: 1px solid var(--color-ccc);
+    border-radius: 6px;
+    box-sizing: border-box;
+    /* Asegura que el padding no rompa el ancho */
+    font-family: inherit;
+    /* ¡Detalle!, mantiene la misma fuente del resto del documento */
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al hacer clic en cada campo "focus" */
+.contacto input:focus,
+.contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    /* Se ilumina el borde del "imput" con ese color (acentúa) */
+    background-color: var(--color-fff);
+}
+
+/* Estilo para los botones del Formulario "enviar" y "borrar" */
+.contacto input[type="submit"],
+.contacto input[type="reset"] {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    /* ¡Curiosidad!, esto cambia el cursor del ratón a una mano con un dedo extendido (similar a un enlace) cuando pasa sobre un elemento, indicando que es interactivo y se puede hacer clic en él */
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+/* Estilo para el botón "enviar" (Principal) */
+.contacto input[type="submit"] {
+    background-color: var(--color-profblue);
+    color: var(--color-fff);
+    font-weight: bold;
+}
+
+.contacto input[type="submit"]:hover {
+    background-color: var(--color-box1);
+    transform: scale(1.02);
+    /* Pequeño efecto de "click", se "hincha" levemente */
+}
+
+/* Estilo para el botón "borrar" (Secundario) */
+.contacto input[type="reset"] {
+    background-color: var(--color-eee);
+    color: var(--color-bbb);
+}
+
+.contacto input[type="reset"]:hover {
+    background-color: var(--color-ddd);
+    color: var(--color-profblue);
+}
+
+/* Estilo para "PosData" (P.D.) con "strong" */
+.contacto p strong {
+    color: var(--color-accent);
+}
+
+/* Botón "Volver al principio" "linkProf" */
+.linkProf {
+    text-align: center;
+    /* Centra el botón horizontalmente */
+}
+
+.linkProf a {
+    display: inline-block;
+    /* Comportamiento de botón */
+    text-decoration: none;
+    /* Quita el subrayado */
+    background-color: var(--color-accent);
+    /* Color inicial (rojo suave) */
+    color: var(--color-fff);
+    padding: 12px 30px;
+    /* Tamaño del botón */
+    border-radius: 50px;
+    /* Bordes redondeados */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    /* Transición lenta (0.5 segundos) */
+}
+
+/* Efecto "hover" del botón volver */
+.linkProf a:hover {
+    background-color: var(--color-dark);
+    /* Cambio lento al gris oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    /* Pequeño efecto de elevación */
+}
+
+/* Estilos para el "footer" (Pie de página) */
+footer {
+    background-color: var(--color-profblue);
+    /* Mismo color azul oscuro que el "header" para dar simetría */
+    color: var(--color-fff);
+    /* Texto en blanco para que haga contraste */
+    padding: 40px 20px;
+    /* Espaciado moderado */
+    text-align: center;
+    /* Centra todo el contenido */
+    border-top: 3px solid var(--color-accent);
+    /* Línea decorativa rojo suave */
+    margin-top: 60px;
+}
+
+/* Configuración de los enlaces (GitHub y LinkedIn) */
+.links ul {
+    list-style: none;
+    /* Quita las viñetas */
+    padding: 0;
+    margin: 0 0 20px 0;
+    /* Espacio debajo de la lista */
+    display: flex;
+    /* Flexbox para alinear horizontalmente */
+    justify-content: center;
+    /* Centra los elementos */
+    gap: 15px;
+    /* Espacio entre los elementos */
+}
+
+.links li {
+    display: flex;
+    align-items: center;
+}
+
+/* Inserta el símbolo "|" entre los elementos */
+.links li:not(:last-child)::after {
+    content: "|";
+    /* Agrega la barra vertical */
+    margin-left: 15px;
+    /* Separa la barra del texto */
+    color: var(--color-bbb);
+    /* Color gris suave para la barra */
+    font-weight: normal;
+}
+
+/* Estilo y transición de los enlaces */
+.links a {
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: var(--color-eee);
+    /* Color blanco azulado suave */
+    font-weight: bold;
+    font-size: 1.1em;
+
+    /* Transición lenta del color */
+    transition: color 0.8s ease;
+}
+
+.links a:hover {
+    color: var(--color-accent);
+    /* Cambia al "rojo suave" */
+}
+
+/* Estilo del nombre y el "copyright" */
+footer p {
+    margin: 10px 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+/* Estilo para la etiqueta "small" */
+footer small {
+    display: block;
+    /* Asegura que ocupe su propia línea */
+    margin-top: 15px;
+    color: var(--color-bbb);
+    /* Color gris para que sea discreto */
+    line-height: 1.6;
+}
