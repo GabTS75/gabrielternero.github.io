@@ -2,4 +2,4 @@
 
 ## 🧠 Proyecto para la asignatura de Lenguaje de Marcas
 
-### Actividad 1er. Trimestre - Diciembre 2025
+### Actividad 1er. Trimestre Diciembre 2025
