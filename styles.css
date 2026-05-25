@@ -1,0 +1,690 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap");
+/* Importamos la fuente 'Outfit' desde Google Fonts */
+
+/* 1. VARIABLES Y CONFIGURACIÓN */
+:root {
+    --bg-dark: #0f172a;
+    /* Azul muy oscuro de fondo */
+    --bg-medium: rgba(15, 23, 42, 0.8);
+    /* Azul oscuro semi-transparente para capas intermedias */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    /* Blanco muy transparente */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    /* Borde sutil para el efecto cristal */
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    /* Sombra para dar profundidad */
+
+    --text-main: #e2e8f0;
+    /* Blanco opaco para el texto principal */
+    --text-muted: #94a3b8;
+    /* Gris azulado */
+    --text-smoke: #cbd5e1;
+    /* Gris claro para el texto secundario */
+    --accent: #38bdf8;
+    /* Azul cian brillante */
+    --accent-hover: #0ea5e9;
+    /* Azul cian más oscuro para el hover */
+
+    --gradient-blob-1: #7c3aed;
+    /* Violeta */
+    --gradient-blob-2: #2563eb;
+    /* Azul */
+}
+
+* {
+    /* Reseteo básico y configuración global */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Para que el padding no afecte al tamaño total */
+    cursor: default !important;
+    /* Cursor por defecto (quito la manito del maouse para los links)*/
+    /* Si se requiere restaurar (que cambie a "manito" en los enlaces, se elimina esa línea */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Desplazamiento suave al hacer clic en enlaces de navegación */
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    /* Uso una fuente moderna o en su defecto la sans-serif */
+    background-color: var(--bg-dark);
+    /* Fondo oscuro sólido para un mejor contraste con el efecto cristal */
+    color: var(--text-main);
+    /* Color de texto principal */
+    line-height: 1.6;
+    /* Para mejor legibilidad */
+    overflow-x: hidden;
+    /* Evita el scroll horizontal causado por los blobs animados */
+    position: relative;
+    /* Para posicionar los blobs de fondo */
+}
+
+/* Fondo abstracto animado (Blobs de color detrás del cristal) */
+body::before,
+body::after {
+    content: '';
+    /* Elementos vacíos para los blobs de fondo */
+    position: fixed;
+    /* Fijo para que se mantengan en su lugar al hacer scroll */
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(100px);
+    /* Ese desenfoque es el que "crea el ambiente" */
+    z-index: -1;
+    /* Detrás de todo el contenido */
+    opacity: 0.6;
+    /* Opacidad para que no sean demasiado intrusivos */
+    animation: blobAnimation 20s infinite;
+    /* Animación suave y lenta */
+}
+
+/* Blob Violeta */
+body::before {
+    background: var(--gradient-blob-1);
+    top: -100px;
+    left: -100px;
+}
+
+/* Blob Azul */
+body::after {
+    background: var(--gradient-blob-2);
+    bottom: -100px;
+    right: -100px;
+}
+
+/* 2. CLASES (Estilo Cristal) */
+.glass,
+.sobreMi,
+.formacion,
+.proyectos,
+.contacto {
+    background: var(--glass-bg);
+    /* Fondo semi-transparente para el efecto cristal */
+    backdrop-filter: blur(12px);
+    /* Efecto de vidrio esmerilado */
+    -webkit-backdrop-filter: blur(12px);
+    /* Soporte Safari y Edge */
+    border: 1px solid var(--glass-border);
+    /* Borde sutil para definir el cristal */
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+}
+
+/* Contenedores principales */
+main {
+    max-width: 1100px;
+    /* Ancho máximo para evitar que el contenido se extienda demasiado en pantallas grandes */
+    margin: 40px auto;
+    /* Margen superior e inferior a 40px y centrado automático */
+    padding: 0 20px;
+    /* Espacio lateral de 20px */
+    display: flex;
+    /* Usamos flexbox para organizar las secciones principales */
+    flex-direction: column;
+    /* Las secciones se apilan verticalmente */
+    gap: 60px;
+    /* Separación entre grandes bloques */
+}
+
+/* 3. HEADER Y NAV */
+header {
+    text-align: center;
+    padding: 60px 20px 10px 20px;
+    /* Espacio de 40px arriba, 20px derecha, 10px abajo y 20px izquierda */
+    margin-bottom: 20px;
+    /* Espacio debajo del header para separar del contenido */
+}
+
+.linkProf a {
+    display: inline-block;
+    /* Para que el enlace se comporte como un bloque y podamos aplicar padding */
+    text-decoration: none;
+    /* Quitamos el subrayado */
+    background: var(--glass-bg);
+    /* Fondo tipo cristal */
+    color: var(--accent);
+    /* Usamos el azul cian del diseño */
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    /* Borde sutil para el efecto cristal */
+    backdrop-filter: blur(5px);
+    /* Un poco de desenfoque para el botón */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.linkProf a:hover {
+    background: rgba(56, 189, 248, 0.2);
+    /* Un leve brillo azul */
+    color: #fff;
+    border-color: var(--accent);
+    /* Borde más brillante al hacer hover */
+    transform: translateY(-2px);
+    /* Pequeño levantamiento al hacer hover */
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #fff, var(--accent));
+    /* Degradado para el título */
+    background-clip: text;
+    /* Clipa el fondo al texto */
+    -webkit-background-clip: text;
+    /* Soporte Safari y Edge */
+    -webkit-text-fill-color: transparent;
+    /* Se ve el texto con el degradado */
+    margin-bottom: 10px;
+}
+
+.infoProf small {
+    color: var(--text-muted);
+    /* Color gris azulado para el texto secundario */
+    font-size: 0.9em;
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    /* Usamos flexbox para centrar el menú */
+    justify-content: center;
+    /* Centramos horizontalmente */
+    padding: 10px 0;
+}
+
+.nav-list {
+    list-style: none;
+    /* Quitamos los puntos de la lista */
+    display: flex;
+    gap: 30px;
+    background: var(--bg-medium);
+    /* Fondo algo más opaco y transparente para el menú */
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    /* Efecto cristal */
+}
+
+.nav-list a {
+    text-decoration: none;
+    /* Quitamos el subrayado */
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: var(--accent);
+    /* Efecto hover azul brillante */
+}
+
+/* Botón Hamburguesa (no se ve en el PC) */
+.menu-toggle {
+    display: none;
+    /* Se muestra solo en móvil con media query */
+    background: none;
+    /* Sin fondo para el botón */
+    border: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Las tres líneas del botón hamburguesa */
+.menu-toggle span {
+    display: block;
+    /* Cada línea es un bloque */
+    width: 25px;
+    /* Ancho de las líneas */
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* 4. SECCIÓN "Sobre mí" */
+.sobreMi {
+    padding: 40px;
+    /* Espacio interno para que el contenido no toque los bordes del cristal */
+}
+
+/* Mi imagen flotante pero moderna */
+.sobreMi figure {
+    float: right;
+    /* Imagen flotante a la derecha */
+    width: 200px;
+    /* Ancho fijo para la imagen */
+    margin-top: 110px;
+    /* Para que la imagen quede alineada con el título */
+    margin-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.sobreMi img {
+    width: 100%;
+    /* La imagen ocupa todo el ancho del contenedor */
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+    /* Borde azul cian para destacar la imagen */
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    /* Resplandor azul cian */
+}
+
+/* Mi nombre al pie de la foto, centrado y estilizado */
+.sobreMi figcaption {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Títulos */
+h2 {
+    color: var(--accent);
+    /* Azul cian para los títulos de las secciones */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    /* Línea sutil debajo del título */
+    padding-bottom: 10px;
+    display: inline-block;
+    /* Para que el borde solo ocupe el ancho del texto (la parte de abajo como subarayado) */
+}
+
+p {
+    margin-bottom: 1.5rem;
+    /* Espacio entre párrafos para mejorar la legibilidad */
+    color: var(--text-smoke);
+    /* Gris claro para lectura */
+}
+
+/* Skills (Habilidades) */
+.skills {
+    margin-top: 40px;
+    /* Separación entre la sección de "Sobre mí" y "Habilidades" */
+}
+
+.skills h3 {
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.hard,
+.soft {
+    background: rgba(255, 255, 255, 0.03);
+    /* Ligeramente más claro que el fondo */
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--glass-border);
+    /* Borde sutil para el efecto cristal */
+    transition: transform 0.3s, border-color 0.3s;
+    /* Transición suave para el hover */
+
+}
+
+.hard:hover,
+.soft:hover {
+    transform: translateY(-5px);
+    /* Pequeño levantamiento al hacer hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    /* Sombra más intensa al hacer hover */
+    border-color: var(--accent);
+    /* Borde más brillante al hacer hover */
+}
+
+.hard h4,
+.soft h4 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    /* Mayúsculas para los subtítulos de habilidades */
+    letter-spacing: 1px;
+}
+
+dt {
+    color: var(--text-main);
+    /* Color blanco opaco para los nombres de las habilidades */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd {
+    color: var(--text-muted);
+    /* Gris azulado para las descripciones de habilidades */
+    margin-left: 10px;
+    border-left: 2px solid var(--accent);
+    padding-left: 10px;
+}
+
+/* 5. SECCIÓN "Formación y Especialización" */
+.formacion {
+    padding: 40px;
+}
+
+.formacion h3 {
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.formacion h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.especializacion {
+    display: flex;
+    /* Flexbox para organizar las especializaciones en una fila */
+    flex-wrap: wrap;
+    /* Permite que las especializaciones se ajusten a la siguiente línea en pantallas pequeñas */
+    gap: 20px;
+    /* Espacio entre las especializaciones */
+    margin-top: 30px;
+}
+
+.ciber,
+.iaDatos,
+.gls {
+    flex: 1 1 300px;
+    /* Crece, se encoge y tiene un ancho base de 300px (responsive)*/
+    background: rgba(0, 0, 0, 0.2);
+    /* Fondo más oscuro para destacar */
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.ciber:hover,
+.iaDatos:hover,
+.gls:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Agregamos un icono personalizado antes de cada elemento de la lista */
+ul li::before {
+    content: '▹';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+}
+
+/* 6. SECCIÓN "Proyectos" */
+.proyectos {
+    padding: 40px;
+}
+
+.grid-proyectos {
+    display: grid;
+    /* Grid automático */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Cada tarjeta tiene un ancho mínimo de 300px y se puede ajustar al espacio disponible */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Las tarjetas heredan el efecto glass pero lo reforzamos */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    /* Para que la imagen no se salga al hacer zoom, se oculta el exceso */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* Para que el contenido se apilen en vertical */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+.card figure {
+    height: 200px;
+    /* Altura fija para las imágenes de los proyectos */
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    /* 100% del ancho del contenedor */
+    height: 100%;
+    /* 100% de la altura del contenedor */
+    object-fit: cover;
+    /* Recorta la imagen para llenar el espacio */
+    transition: transform 0.5s;
+    /* Transición suave para el efecto zoom */
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    /* Efecto zoom al pasar el ratón */
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Para que el contenido se apilen en vertical */
+    flex-grow: 1;
+    /* Para que el contenido ocupe todo el espacio disponible */
+}
+
+.card h4 {
+    color: #fff;
+    /* Color blanco del título de cada proyecto, para destacar sobre el fondo oscuro */
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-links {
+    margin-top: auto;
+    /* Empuja los enlaces (tipo botones) hacia el final del contenido */
+    padding-top: 15px;
+    display: flex;
+    gap: 15px;
+    /* Espacio entre los enlaces */
+}
+
+.card-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    border: 1px solid var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    /* Botones redondeados */
+    transition: background 0.3s, color 0.3s;
+    /* Transición suave para el hover */
+}
+
+.card-links a:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* 7. SECCIÓN "Contacto" */
+.contacto {
+    padding: 40px;
+}
+
+input,
+textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    /* Para que el texto dentro de los inputs use la misma fuente que el resto del sitio */
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    /* Quitamos el borde de enfoque predeterminado */
+    border-color: var(--accent);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+input[type="submit"] {
+    background: var(--accent);
+    /* Botón con el color cyan */
+    color: var(--bg-dark);
+    /* Texto oscuro para el contraste */
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    transition: filter 0.3s;
+    /* Transición suave para el efecto de brillo */
+}
+
+input[type="submit"]:hover {
+    filter: brightness(1.3);
+    /* Efecto de brillo al hacer hover en el botón de envío */
+}
+
+input[type="reset"] {
+    background: transparent;
+    /* Botón transparente para borrar */
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* 8. SECCIÓN "Footer" */
+footer {
+    text-align: center;
+    padding: 60px 10px 40px 10px; /* Amplio espacio para el footer */
+    border-top: 1px solid var(--glass-border);
+    margin-top: 60px; /* Separación entre el contenido y el footer */
+    background: var(--bg-medium);
+}
+
+.links ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.links a {
+
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.links a:hover {
+    color: var(--accent);
+    transition: color 0.3s;
+
+}
+
+/* 9. MEDIA QUERIES */
+
+/* Ajustes para móviles, máximo 768px */
+@media (max-width: 768px) {
+
+    /* Ajustes generales */
+    main {
+        padding: 0 10px;
+    }
+
+    /* Menú Móvil Activo */
+    .menu-toggle {
+        display: flex;
+        /* Mostrar botón hamburguesa */
+        position: fixed;
+        /* Fijo para que siempre esté visible */
+        top: 20px;
+        /* Posición en la esquina superior --- */
+        right: 20px;
+        /* --- derecha */
+        z-index: 200;
+        /* Por encima del menú */
+        background: rgba(15, 23, 42, 0.9);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    /* Animación del botón al abrir */
+    .menu-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        /* Primera línea se convierte en diagonal hacia abajo */
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+        /* La línea del medio desaparece */
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        /* Tercera línea se convierte en diagonal hacia arriba */
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        /* Fijo para que se mantenga en su lugar al hacer scroll */
+        right: -100%;
+        /* Oculto a la derecha */
+        width: 70%;
+        /* Ocupa el 70% del ancho de la pantalla */
+        height: 100vh;
+        /* Altura completa de la pantalla */
+        background: rgba(15, 23, 42, 0.95);
+        flex-direction: column;
+        /* Las opciones del menú se apilan verticalmente */
+        justify-content: center;
+        align-items: center;
+        border-radius: 0;
+        transition: right 0.4s ease;
+        /* Transición suave para el menú */
+        z-index: 150;
+        /* Por debajo del botón pero por encima del contenido */
+    }
+
+    .nav-list.active {
+        right: 0;
+        /* El menú se desliza desde la derecha */
+    }
+
+    /* Ajustes Sobre Mí en móvil */
+    .sobreMi figure {
+        float: none;
+        /* Quitamos el float para que la imagen se comporte como un bloque */
+        margin: 0 auto 10px auto;
+        /* Centrado horizontal y margen inferior para separar del texto */
+        display: block;
+        /* Para que la imagen se comporte como un bloque y se centre */
+        width: 150px;
+        /* Ancho reducido para móviles */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}

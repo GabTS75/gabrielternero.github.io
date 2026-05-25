@@ -13,7 +13,8 @@
     <!-- Indica el autor del documento -->
     <meta name="copyright" content="Gabriel Ternero 2025">
     <!-- Derechos de autor del documento -->
-    <meta name="description" content="Proyecto: Portfolio Profesional de Gabriel Ternero">
+    <meta name="description"
+        content="Portfolio Profesional de Gabriel Ternero, Administrador de Sistemas Informáticos en Red (ASIR) especializado en Ciberseguridad e Inteligencia Artificial">
     <!-- Proporciona una breve descripción del contenido del documento para los motores de búsqueda -->
     <meta name="robots" content="index, follow">
     <!-- Indica a los motores de búsqueda que indexen la página y sigan los enlaces -->
@@ -21,7 +22,7 @@
     <!-- Enlaza un icono que se muestra en la pestaña del navegador -->
     <title>Gabriel Ternero | Portfolio Profesional</title>
     <!-- Título del documento que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <!-- Referencia al archivo "styles" CSS (estilos en CSS) -->
 </head>
 
@@ -47,21 +48,25 @@
                 </p>
             </div>
             <div>
-                <nav> <!-- Barra de navegación con enlaces a secciones específicas de la página -->
-                    <ul>
-                        <li>
-                            <a href="#sobre-mi">Sobre mí</a>
-                        </li>
-                        <li>
-                            <a href="#mi-formacion">Formación</a>
-                        </li>
-                        <li>
-                            <a href="#mis-proyectos">Proyectos</a>
-                        </li>
-                        <li>
-                            <a href="#contactar">Contacto</a>
-                        </li>
+                <nav class="navbar"> <!-- Barra de navegación con enlaces a secciones específicas de la página -->
+
+                    <button class="menu-toggle" aria-label="Abrir menú"> <!-- Botón para menú móvil -->
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+                    <ul class="nav-list">
+
+                        <li><a href="#sobre-mi">Sobre mí</a></li>
+                        <li><a href="#mi-formacion">Formación</a></li>
+                        <li><a href="#mis-proyectos">Proyectos</a></li>
+                        <li><a href="#contactar">Contacto</a></li>
+
                     </ul>
+
                 </nav>
             </div>
         </header>
@@ -73,48 +78,49 @@
                 <section>
 
                     <h2 id="sobre-mi">Sobre mí</h2> <!-- Ancla sobre el encabezado de nivel 2 "Sobre mí" -->
+
                     <figure>
-                        <img src="./images/GabTShtml.JPG" alt="Mi fotografía" width="200">
+                        <img src="./images/GabTS.JPG" alt="Mi fotografía" width="200">
                         <!-- Mi imagen profesional -->
                         <figcaption>Gabriel Ternero</figcaption>
                     </figure>
                     <br>
-                    <p>Soy un informático de la <em>"vieja escuela"</em> con mentalidad de futuro. Mi pasión por la
-                        tecnología nació
-                        a principios de los 90, entre pantallas de MS-DOS, Windows 3.11, código en Pascal, C++ y el
-                        montaje
-                        de hardware desde
-                        cero. Esa curiosidad me llevó a emprender muy joven, creando y gestionando mi propio negocio de
-                        servicios de Internet en Perú, donde aprendí que la tecnología <i>no sirve de nada</i> si no
-                        soluciona
-                        problemas reales a las personas.</p>
+                    <p>¡Hola! Soy Gabriel Ternero, estudiante de PROMETEO FP, Grado Superior 100% Oficial y Homologado.
+                        Actualmente estoy formándome en <b>Administración de Sistemas Informáticos en Red (ASIR)</b> y
+                        he complementado mis estudios con cursos en áreas clave como <em>ciberseguridad, inteligencia
+                            artificial, análisis de datos, liderazgo y productividad</em>.</p>
 
-                    <p>La vida me trajo a España a comienzos del 2005 y, como muchos, tuve que reinventarme. Durante
-                        <b>casi
-                            dos décadas</b> en
-                        el sector servicios y hostelería, forjé una capacidad de trabajo inquebrantable, gestión de
-                        equipos
-                        y resolución de conflictos bajo presión. Sin embargo, mi <em>"código fuente"</em> seguía ahí.
+                    <p>Me considero una persona perseverante, orientada al aprendizaje continuo y con una visión muy
+                        práctica de la tecnología. Mi experiencia diversa me aporta algo que valoro mucho: <em>la
+                            capacidad de entender los problemas desde distintos ángulos, comunicarme con claridad y
+                            trabajar con compromiso real</em>.</p>
+
+                    <p>Soy un apasionado de la tecnología y la seguridad informática con una trayectoria muy singular.
+                        Me
+                        inicié en el sector IT en los 90 (soporte, redes y programación) y gestioné mi propio
+                        emprendimiento tecnológico antes de emigrar a España.</p>
+
+                    <p>Tras una etapa de maduración profesional en sectores de alta exigencia y atención al cliente
+                        <em>—donde desarrollé una fuerte ética de trabajo y lealtad—</em>, he retornado a mi verdadera
+                        vocación actualizando mi perfil técnico al 100%.
                     </p>
 
-                    <p>Hace un tiempo decidí que era hora de volver a casa: <b>a la tecnología</b>. Me he reciclado por
-                        completo
-                        cursando <b>ASIR</b> y especializándome intensivamente en Ciberseguridad e Inteligencia
-                        Artificial.
-                    </p>
+                    <p>Actualmente, estoy enfocado en la <b>Ciberseguridad</b> y la <b>Administración de Sistemas</b>,
+                        complementando mi formación reglada <em>con certificaciones en IA, Análisis de Datos y Respuesta
+                            a Incidentes</em>.</p>
 
-                    <p>Hoy, combino <b>la experiencia vital y la responsabilidad</b> de un profesional senior, con <b>la
-                            ilusión y las
-                            ganas de aprender</b> de un junior. Busco mi oportunidad en Ciberseguridad para proteger
-                        infraestructuras digitales, aportando no solo
-                        conocimientos técnicos actualizados, sino también la madurez de quien sabe lo que es trabajar
-                        duro
-                        para conseguir un objetivo.</p>
+                    <p><b>¿Qué ofrezco?</b> La curiosidad técnica de siempre, sumada a la fiabilidad, la disciplina y la
+                        capacidad de gestión que solo te da la experiencia vital. Mi objetivo es integrarme en un equipo
+                        de <b>Blue Team</b> o <b>soporte especializado</b> donde pueda crecer, proteger activos
+                        digitales y demostrar que la actitud y la perseverancia son las mejores herramientas de defensa.
+                    </p>
 
                     <div class="skills"> <!-- Caja de Habilidades -->
+
                         <h3>Habilidades</h3> <!-- Subtítulo habilidades -->
 
                         <div class="hard">
+
                             <h4>Técnicas (Hard Skills)</h4>
 
                             <dl> <!-- Lista de definiciones para las habilidades -->
@@ -137,7 +143,9 @@
                         </div>
 
                         <div class="soft">
+
                             <h4>Humanas (Soft Skills)</h4>
+
                             <dl>
                                 <dt><b>Resiliencia y Adaptabilidad:</b></dt>
                                 <dd>Capacidad demostrada para reinventarse y aprender tecnologías nuevas desde cero.
@@ -174,27 +182,36 @@
                 <section> <!-- Sección de Formación -->
 
                     <h2 id="mi-formacion">Formación</h2> <!-- Ancla sobre el encabezado de nivel 2 "Formación" -->
+
+                    <h3>Académico Profesional</h3>
+
                     <div class="academico"> <!-- Caja de Formación Académica -->
-                        <h3>Académico Profesional</h3>
                         <ul>
-                            <li><strong>Técnico Superior en Administración de Sistemas Informáticos en Red
-                                    (ASIR)</strong>
-                                <br>
+                            <li>
+                                <h4>Técnico Superior en Administración de Sistemas Informáticos en Red
+                                    (ASIR)</h4>
+
                                 Centro de estudios: PROMETEO FP (España) | Grado Superior 100% Oficial y Homologado <br>
                                 Actualmente en curso (1er. año) | 2025-2026
                             </li> <br>
 
-                            <li><strong>Técnico en Computación e Informática</strong> <br>
+                            <li>
+                                <h4>Técnico en Computación e Informática</h4>
+
                                 Centro de estudios: Instituto Superior Tecnológico IDAT (Lima, Perú) | Grado Superior
                                 <br>
                                 Finalizado | 1992-1995
                             </li> <br>
                         </ul>
                     </div>
+
+                    <h3>Especialización y de Formación Contínua | 2024-2025</h3>
+
                     <div class="especializacion"> <!-- Caja de Especialización -->
-                        <h3>Especialización y de Formación Contínua | 2024-2025</h3>
                         <div class="ciber"> <!-- Caja Ciberseguridad -->
+
                             <h4>Ciberseguridad y Redes</h4>
+
                             <ul>
                                 <li>
                                     Ciberseguridad: Prevención, Análisis y Respuesta a Incidencias. <br>
@@ -207,7 +224,9 @@
                             </ul>
                         </div>
                         <div class="iaDatos"> <!-- Caja IA y Datos -->
+
                             <h4>Inteligencia Artificial y Datos</h4>
+
                             <ul>
                                 <li>
                                     Inteligencia Artificial Aplicada a la Empresa. <br>
@@ -231,7 +250,9 @@
                             </ul>
                         </div>
                         <div class="gls"> <!-- Caja GLS -->
+
                             <h4>Gestión, Liderazgo y Sostenibilidad</h4>
+
                             <ul>
                                 <li>
                                     Liderazgo y Dirección de Organizaciones. <br>
@@ -261,210 +282,85 @@
 
             </div>
 
-            <div class="proyectos"> <!-- Caja general de Proyectos -->
-
+            <div class="proyectos"> <!--- Caja general de Proyectos -->
                 <section> <!-- Sección de Proyectos -->
 
-                    <h2 id="mis-proyectos">Proyectos</h2> <!-- Ancla sobre el encabezado de nivel 2 "Proyectos" -->
-                    <p> He trabajado en varios proyectos relacionados con la ciberseguridad, incluyendo la
-                        implementación de
-                        medidas de seguridad en redes, análisis de vulnerabilidades y desarrollo de políticas de
-                        seguridad.
-                        Estos proyectos me han permitido aplicar mis conocimientos teóricos en situaciones prácticas y
-                        mejorar
-                        mis habilidades técnicas. </p>
+                    <h2 id="mis-proyectos">Proyectos</h2>
 
-                    <h3>Proyectos de Ciberseguridad</h3> <!-- Subtítulo para los proyectos -->
+                    <p class="intro-proyectos">He trabajado en varios proyectos relacionados con la ciberseguridad,
+                        aplicando conocimientos teóricos en situaciones prácticas.</p>
+                    <!-- Introducción a los proyectos -->
 
-                    <div class="ids"> <!-- Caja del Proyecto 1 -->
-                        <article> <!-- Cada proyecto está contenido en un artículo separado. -->
-                            <table> <!-- Tabla para organizar la imagen y el texto del proyecto. -->
-                                <tr>
-                                    <td>
-                                        <figure> <!-- Figura para la imagen del proyecto. -->
-                                            <img width="300" src="./images/proyecto_01.png"
-                                                alt="Diagrama de red segura">
-                                            <!-- Imagen del proyecto. -->
-                                            <figcaption>Red segura con firewall y
-                                                honeypot.</figcaption> <!-- Pie de foto para la imagen. -->
-                                        </figure>
-                                    </td>
-                                    <td>
-                                        <h4>Firewall Avanzado y Sistema de Detección de Intrusiones (IDS) para PYME</h4>
+                    <h3>Proyectos de Ciberseguridad</h3>
 
-                                        <p> Este proyecto se centró en la <b>implementación de una arquitectura de
-                                                seguridad
-                                                de
-                                                red
-                                                robusta</b> para una pequeña y mediana empresa. Se configuró un
-                                            <b>firewall
-                                                de
-                                                última generación</b> (UTM) con reglas de filtrado de paquetes basadas
-                                            en el
-                                            principio de mínimo privilegio. Además, se desplegó un <b>Sistema de
-                                                Detección
-                                                de
-                                                Intrusiones (IDS)</b> basado en red (NIDS) y uno basado en host (HIDS)
-                                            para
-                                            <b>monitorizar el tráfico</b> y alertar sobre patrones de ataque conocidos y
-                                            anomalías.
-                                        </p>
+                    <div class="grid-proyectos"> <!-- Contenedor de la cuadrícula de proyectos -->
 
-                                        <p> Esto incluyó la <b>segmentación de la red</b> (LAN de empleados, DMZ, y red
-                                            de
-                                            invitados) mediante VLANs para contener posibles brechas de seguridad y
-                                            <b>minimizar
-                                                la
-                                                superficie de ataque</b>.
-                                        </p>
+                        <article class="card glass"> <!-- Tarjeta de proyecto con efecto glassmorphism -->
+                            <figure>
+                                <img src="./images/proyecto_01.png" alt="Diagrama de red segura">
+                                <figcaption>Red segura con firewall y honeypot</figcaption>
+                            </figure>
+                            <div class="card-content"> <!-- Contenido de la tarjeta -->
 
-                                        <p><strong>Detalles:</strong> <a href="#" target="_blank">Ver Informe Técnico
-                                                Completo</a>
-                                        </p>
+                                <h4>Firewall Avanzado y IDS para PYME</h4>
 
-                                        <p><strong>Video:</strong> <a href="#" target="_blank">Demostración de
-                                                Configuración
-                                                y
-                                                Alerta</a></p>
-                                    </td>
-                                </tr>
-                            </table>
+                                <p>Implementación de una arquitectura de seguridad robusta (UTM, NIDS/HIDS) y
+                                    segmentación mediante VLANs para minimizar la superficie de ataque.</p>
+                                <div class="card-links"> <!-- Enlaces relacionados con el proyecto -->
+                                    <a href="#" target="_blank">Ver Informe</a>
+                                    <a href="#" target="_blank">Ver Video</a>
+                                </div>
+                            </div>
                         </article>
-                    </div>
 
-                    <hr>
+                        <article class="card glass">
+                            <figure>
+                                <img src="./images/proyecto_02.png" alt="Informe de pentesting">
+                                <figcaption>Informe de pentesting</figcaption>
+                            </figure>
+                            <div class="card-content">
 
-                    <div class="segu"> <!-- Caja del Proyecto 2 -->
-                        <article>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h4>Auditoría de Seguridad y Análisis de Vulnerabilidades Web para Plataforma
-                                            E-commerce
-                                        </h4>
+                                <h4>Auditoría y Pentesting E-commerce</h4>
 
-                                        <p> Se realizó un <b>análisis de vulnerabilidades y una prueba de penetración
-                                                (pentesting)</b>
-                                            de caja negra y caja gris sobre una plataforma de comercio electrónico. El
-                                            objetivo
-                                            fue
-                                            identificar y mitigar fallos de seguridad críticos siguiendo las directrices
-                                            de
-                                            <b>OWASP
-                                                Top 10</b>.
-                                        </p>
-
-                                        <p> Las tareas incluyeron la <b>explotación controlada</b> de vulnerabilidades
-                                            como
-                                            <b>Inyección SQL</b>,
-                                            <b>Cross-Site Scripting (XSS)</b> y configuraciones erróneas del servidor.
-                                            El
-                                            resultado
-                                            fue
-                                            un <b>informe detallado con el nivel de riesgo</b> de cada vulnerabilidad y
-                                            <b>recomendaciones específicas</b> de remediación, logrando una reducción
-                                            del
-                                            <b>90%</b>
-                                            en los riesgos de
-                                            exposición críticos.
-                                        </p>
-
-                                        <p><strong>Detalles:</strong> <a href="#" target="_blank">Acceder al Resumen
-                                                Ejecutivo
-                                                de la
-                                                Auditoría</a></p>
-
-                                        <p><strong>Video:</strong> <a href="#" target="_blank">Video de Prueba de
-                                                Concepto
-                                                (PoC)
-                                                de
-                                                XSS Mitigado</a></p>
-                                    </td>
-                                    <td>
-                                        <figure>
-                                            <img width="300" src="./images/proyecto_02.png" alt="Informe de pentesting">
-                                            <figcaption>Informe de pentesting con gráficos de riesgo</figcaption>
-                                        </figure>
-                                    </td>
-                                </tr>
-                            </table>
+                                <p>Análisis de vulnerabilidades (OWASP Top 10), inyección SQL y XSS. Reducción del 90%
+                                    en riesgos de exposición críticos.</p>
+                                <div class="card-links">
+                                    <a href="#" target="_blank">Ver Resumen</a>
+                                    <a href="#" target="_blank">Ver PoC</a>
+                                </div>
+                            </div>
                         </article>
-                    </div>
 
-                    <hr>
+                        <article class="card glass">
+                            <figure>
+                                <img src="./images/proyecto_03.png" alt="Manual de políticas">
+                                <figcaption>Políticas de Seguridad (PSI)</figcaption>
+                            </figure>
+                            <div class="card-content">
 
-                    <div class="desa"> <!-- Caja del Proyecto 3 -->
-                        <article>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <figure>
-                                            <img width="300" src="./images/proyecto_03.png"
-                                                alt="Manual de políticas de seguridad">
-                                            <figcaption>Manual de políticas con un candado</figcaption>
-                                        </figure>
-                                    </td>
-                                    <td>
-                                        <h4>Desarrollo e Implementación del Marco de Políticas de Seguridad de la
-                                            Información
-                                            (PSI)
-                                        </h4>
+                                <h4>Marco Normativo ISO 27001</h4>
 
-                                        <p> Este proyecto consistió en la <b>creación y despliegue de un conjunto
-                                                integral
-                                                de
-                                                Políticas de
-                                                Seguridad de la Información (PSI)</b>, alineadas con los estándares
-                                            <b>ISO
-                                                27001</b>
-                                            y las
-                                            regulaciones
-                                            de protección de datos (ej., GDPR/LOPDGDD). Se diseñaron políticas clave,
-                                            incluyendo
-                                            la
-                                            <b>Política
-                                                de Gestión de Contraseñas</b>, la <b>Política de Control de Acceso</b> y
-                                            el
-                                            <b>Plan
-                                                de
-                                                Respuesta a
-                                                Incidentes (PRI)</b>.
-                                        </p>
-                                        <p> La implementación incluyó <b>sesiones de capacitación obligatorias</b> para
-                                            todo
-                                            el
-                                            personal
-                                            y la
-                                            integración de las políticas con las herramientas de gestión de identidad y
-                                            acceso
-                                            (IAM)
-                                            de la
-                                            organización. </p>
-
-                                        <p><strong>Detalles:</strong> <a href="#" target="_blank">Consultar Índice del
-                                                Manual de
-                                                Políticas</a></p>
-
-                                        <p><strong>Video:</strong> <a href="#" target="_blank">Clip de la Sesión de
-                                                Concienciación
-                                                sobre Phishing</a></p>
-                                    </td>
-                                </tr>
-                            </table>
+                                <p>Creación y despliegue de políticas PSI, gestión de contraseñas, control de acceso y
+                                    Plan de Respuesta a Incidentes (PRI).</p>
+                                <div class="card-links">
+                                    <a href="#" target="_blank">Ver Manual</a>
+                                    <a href="#" target="_blank">Ver Sesión</a>
+                                </div>
+                            </div>
                         </article>
-                    </div>
 
+                    </div>
                 </section>
-
             </div>
 
             <hr>
 
             <div class="contacto"> <!-- Caja del Contacto-->
 
-                <section>
+                <section> <!-- Sección de Contacto -->
 
                     <h2 id="contactar">Contacto</h2><!-- Ancla sobre el encabezado de nivel 2 "Contacto" -->
+
                     <p> Puedes contactarme rellenando el siguiente formulario: </p>
                     <div>
                         <form> <!-- Inicio del formulario de contacto. -->
@@ -492,14 +388,10 @@
                     </div>
                     <br>
                     <hr>
-                    <p><strong>P.D.:</strong> Estoy abierto a nuevas oportunidades de colaboración y aprendizaje,
+                    <p><b>P.D.:</b> Estoy abierto a nuevas oportunidades de colaboración y aprendizaje,
                         contáctame
                         para discutir posibles proyectos o intercambiar ideas.
                     </p>
-                    <p class="linkProf">
-                        <a href="#principio">Volver al principio</a>
-                    </p>
-
                 </section>
 
             </div>
@@ -507,6 +399,10 @@
         </main>
 
         <footer id="enlaces"> <!--- Pie de página del documento -->
+
+            <p class="linkProf">
+                <a href="#principio">Volver al principio</a>
+            </p>
 
             <div class="links"> <!-- Caja del pie de página -->
                 <ul>
@@ -519,14 +415,32 @@
                 </ul>
             </div>
 
-            <p>Derechos reservados &copy; Gabriel Ternero</p>
-            <p><small>Lenguaje de Marcas y Sistemas de Gestión de la Información <br>
-                    by Profesora Olga Moreno<br>
+            <p>&copy; Derechos reservados | Gabriel Ternero</p>
+            <p><small>Proyecto 1: HTML + CSS del Máster de PROMETEO<br>
+                    by Profesor Antonio Rosales<br>
                     ASIR | Curso 2025-2026 | FP PROMETEO</small></p>
 
         </footer>
 
     </div>
+
+    <script> // Script para el menú de navegación responsive
+        const menuToggle = document.querySelector('.menu-toggle'); // Selecciona el botón del menú
+        const navList = document.querySelector('.nav-list'); // Selecciona la lista de navegación
+
+        menuToggle.addEventListener('click', () => { // Evento de clic en el botón del menú
+            navList.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-list a').forEach(link => { // Selecciona todos los enlaces de la lista de navegación
+            link.addEventListener('click', () => { // Evento de clic en cada enlace
+                navList.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
 
 </body>
 
